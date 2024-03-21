@@ -32,7 +32,7 @@ public class AppointmentController {
 
     @PostMapping(value = "/book")
     public ResponseEntity<AppointmentDto> bookAppointment(@RequestBody BookingRequest request){
-        return new ResponseEntity<AppointmentDto>(appointmentManagementService.bookAppointment(request), HttpStatus.OK);
+        return new ResponseEntity<AppointmentDto>(appointmentManagementService.bookAppointment(request), HttpStatus.CREATED);
     };
 
     @PostMapping(value = "/cancel")
@@ -51,18 +51,18 @@ public class AppointmentController {
 //    }
 
     @GetMapping(value = "/slots/available")
-    public AvailableSlotsDto getAvailableSlots(@RequestParam Long operatorId){
-        return slotService.getAvailableSlots(operatorId);
+    public ResponseEntity<AvailableSlotsDto> getAvailableSlots(@RequestParam Long operatorId){
+        return new ResponseEntity<AvailableSlotsDto>(slotService.getAvailableSlots(operatorId),HttpStatus.OK);
     };
 
     @GetMapping(value = "/slots/booked")
-    public List<SlotDto> getBookedSlots(@RequestParam Long operatorId){
-        return slotService.getBookedSlots(operatorId);
+    public ResponseEntity<List<SlotDto>> getBookedSlots(@RequestParam Long operatorId){
+        return new ResponseEntity<>(slotService.getBookedSlots(operatorId),HttpStatus.OK);
     }
 
     @GetMapping(value = "/booked")
-    public List<AppointmentDto> getBookedAppointments(@RequestParam Long operatorId){
-        return appointmentManagementService.getBookedAppointments(operatorId);
+    public ResponseEntity<List<AppointmentDto>> getBookedAppointments(@RequestParam Long operatorId){
+        return new ResponseEntity<>(appointmentManagementService.getBookedAppointments(operatorId),HttpStatus.OK);
     }
 
 }

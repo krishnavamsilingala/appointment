@@ -57,66 +57,16 @@
 			<classifier>jakarta</classifier>
 		</dependency>
 		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>2.0.2</version>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
-<!--	<build>-->
-<!--		<plugins>-->
-<!--			<plugin>-->
-<!--				<groupId>org.springframework.boot</groupId>-->
-<!--				<artifactId>spring-boot-maven-plugin</artifactId>-->
-<!--				<configuration>-->
-<!--					<excludes>-->
-<!--						<exclude>-->
-<!--							<groupId>org.projectlombok</groupId>-->
-<!--							<artifactId>lombok</artifactId>-->
-<!--						</exclude>-->
-<!--					</excludes>-->
-<!--					<encoding>UTF8</encoding>-->
-<!--					<release>17</release>-->
-<!--					<compilerArgs>-->
-<!--						<arg>-parameters</arg>-->
-<!--						<arg>-Aquerydsl.generatedAnnotationClass=jakarta.annotation.Generated</arg>-->
-<!--						<arg>-Aquerydsl.entityAccessors=true</arg>-->
-<!--					</compilerArgs>-->
-<!--					<annotationProcessorPaths combine.children="append">-->
-<!--						&lt;!&ndash; QueryDSL &ndash;&gt;-->
-<!--						<path>-->
-<!--							<groupId>com.querydsl</groupId>-->
-<!--							<artifactId>querydsl-apt</artifactId>-->
-<!--&lt;!&ndash;							<version>${querydsl.version}</version> &lt;!&ndash; sync with spring boot &ndash;&gt;&ndash;&gt;-->
-<!--							<classifier>jakarta</classifier>-->
-<!--						</path>-->
-<!--						<path>-->
-<!--							<groupId>com.querydsl</groupId>-->
-<!--							<artifactId>querydsl-jpa</artifactId>-->
-<!--&lt;!&ndash;							<version>${querydsl.version}</version> &lt;!&ndash; sync with spring boot &ndash;&gt;&ndash;&gt;-->
-<!--							<classifier>jakarta</classifier>-->
-<!--						</path>-->
-<!--						<path>-->
-<!--							<groupId>jakarta.annotation</groupId>-->
-<!--							<artifactId>jakarta.annotation-api</artifactId>-->
-<!--							<version>2.1.1</version>-->
-<!--						</path>-->
-<!--						<path>-->
-<!--							<groupId>jakarta.persistence</groupId>-->
-<!--							<artifactId>jakarta.persistence-api</artifactId>-->
-<!--							<version>3.1.0</version>-->
-<!--						</path>-->
-<!--						<path>-->
-<!--							<groupId>org.projectlombok</groupId>-->
-<!--							<artifactId>lombok</artifactId>-->
-<!--&lt;!&ndash;							<version>${lombok.version}</version>&ndash;&gt;-->
-<!--						</path>-->
-<!--					</annotationProcessorPaths>-->
-<!--				</configuration>-->
-<!--			</plugin>-->
-<!--		</plugins>-->
-
-<!--	</build>-->
 
 	<build>
 		<plugins>
