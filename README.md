@@ -1,10 +1,13 @@
 Install Maven build tool
 
+Configure Database credentials(username,password) in appication.yml file in resources directory
+
 Run following steps
   //to Build the application
   1. mvn clean install
   //to Start the application
   2. mvn spring-boot:run
+
 
 Swagger Endpoint: http://localhost:8080/agency/swagger-ui/index.html
 
