@@ -1,8 +1,6 @@
 package com.agency.appointment.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Version;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,6 +10,8 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 
+
+@Table(uniqueConstraints = @UniqueConstraint(columnNames = {"operator_id", "date", "startTime", "endTime"}))
 @Entity
 @Getter
 @Setter
