@@ -1,0 +1,46 @@
+spring:
+  datasource:
+    primary:
+      url: jdbc:mysql://localhost:3306/agency?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false&zeroDateTimeBehavior=CONVERT_TO_NULL
+      username: root
+      password: password
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      hikari:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        allow-pool-suspension: true
+        connection-timeout: 30000
+        idle-timeout: 600000
+        max-lifetime: 1800000
+        leak-detection-threshold: 20000
+        pool-name: PrimaryJPAHikariCP
+        maximum-pool-size: 10
+        minimum-idle: 5
+    slave:
+      url: jdbc:mysql://localhost:3306/agency?allowPublicKeyRetrieval=true&useSSL=false&zeroDateTimeBehavior=CONVERT_TO_NULL
+      username: root
+      password: password
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      hikari:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        allow-pool-suspension: true
+        connection-timeout: 30000
+        idle-timeout: 6000
+        max-lifetime: 18000
+        leak-detection-threshold: 20000
+        pool-name: SlaveJPAHikariCP
+        maximum-pool-size: 10
+        minimum-idle: 5
+  jpa:
+    properties:
+      hibernate:
+        order_inserts: true
+        jdbc:
+          time_zone: UTC
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+  servlet:
+    multipart:
+      enabled: false
